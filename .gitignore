@@ -1,0 +1,13 @@
+.idea
+.vs
+.env
+
+/wordpress/*
+/certbot-etc/*
+/nginx/*
+/db_datax/*
+
+!/wordpress/.gitkeep
+!/certbot-etc/.gitkeep
+!/nginx/.gitkeep
+!/db_datax/.gitkeep
