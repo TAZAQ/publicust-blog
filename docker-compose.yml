@@ -11,6 +11,8 @@ services:
       MYSQL_DATABASE: $MYSQL_DATABASE
       MYSQL_USER: $MYSQL_USER
       MYSQL_PASSWORD: $MYSQL_PASSWORD
+    networks:
+      - app-network
 
   wordpress:
     depends_on:
@@ -26,6 +28,8 @@ services:
       WORDPRESS_DB_USER: $MYSQL_USER
       WORDPRESS_DB_PASSWORD: $MYSQL_PASSWORD
       WORDPRESS_DB_NAME: $MYSQL_DATABASE
+    networks:
+      - app-network
 
 volumes:
   wordpress:
@@ -33,4 +37,5 @@ volumes:
 
 networks:
   app-network:
-    driver: bridge
+    external:
+      name: publicust
